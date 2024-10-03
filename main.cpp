@@ -1,4 +1,4 @@
-// COMSC-210 | Lab14: Color Class | Nina Tsao
+// COMSC-210 | Lab16: Color Class w/Constructors | Nina Tsao
 
 #include <iostream>
 using namespace std;
@@ -13,9 +13,9 @@ private:
 
 // public setter & getter member functions
 public:
-    Color()                    {red = 0; green = 0; blue = 0;}
-    Color(int g)               {red = 0; green = g; blue = 0;}
-    Color(int r, int g, int b) {red = r; green = g; blue = b;}
+    Color()                    {red = 0; green = 0; blue = 0;}  // default constructor
+    Color(int g)               {red = 0; green = g; blue = 0;}  // partial constructor
+    Color(int r, int g, int b) {red = r; green = g; blue = b;}  // full parameter constructor
 
     // print() method to print the object data
     void print() {
@@ -30,22 +30,16 @@ public:
 int main() {
     cout << "The values of colors:" << endl << endl;
 
+    // default constructor
     Color c1;
-    c1.setRed(255);
-    c1.setGreen(0);
-    c1.setBlue(0);
     c1.print();
     
-    Color c2;
-    c2.setRed(0);
-    c2.setGreen(255);
-    c2.setBlue(0);
+    // partial constructor
+    Color c2(255);      // green = 255
     c2.print();
 
-    Color c3;
-    c3.setRed(0);
-    c3.setGreen(0);
-    c3.setBlue(255);
+    // full parameter constructor
+    Color c3(255, 255, 255);
     c3.print();
 
     return 0;
